@@ -772,7 +772,7 @@ func (p *Peer) pushVersionMsg() error {
 
 	// Version message.
 	msg := wire.NewMsgVersion(ourNA, theirNA, nonce, int32(blockNum))
-	msg.AddUserAgent(p.cfg.UserAgentName, p.cfg.UserAgentVersion)
+	msg.AddUserAgent(p.cfg.UserAgentName, p.cfg.UserAgentVersion, "bump2mb")
 
 	// XXX: bitcoind appears to always enable the full node services flag
 	// of the remote peer netaddress field in the version message regardless
